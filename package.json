@@ -1,8 +1,28 @@
 {
+    "author": "Juan José Coppede",
     "name": "hexagonal-architecture-template",
     "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "description": "A minimal NestJS + TypeScript starter structured with Hexagonal Architecture.",
+    "main": "dist/main.js",
+    "license": "MIT",
+    "type": "module",
+    "bugs": {
+        "url": "https://github.com/jcoppede11/hexagonal-architecture-template/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jcoppede11/hexagonal-architecture-template.git"
+    },
+    "keywords": [
+        "nestjs",
+        "typescript",
+        "hexagonal-architecture",
+        "ports-and-adapters",
+        "clean-architecture",
+        "ddd",
+        "template"
+    ],
+    "homepage": "https://github.com/jcoppede11/hexagonal-architecture-template#readme",
     "scripts": {
         "dev": "tsx watch main.ts",
         "start": "tsx main.ts",
@@ -13,18 +33,6 @@
         "format": "prettier --write .",
         "format:check": "prettier --check ."
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/jcoppede11/hexagonal-architecture-template.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "type": "module",
-    "bugs": {
-        "url": "https://github.com/jcoppede11/hexagonal-architecture-template/issues"
-    },
-    "homepage": "https://github.com/jcoppede11/hexagonal-architecture-template#readme",
     "devDependencies": {
         "@nestjs/testing": "^12.0.3",
         "@types/node": "^26.6.5",

@@ -1,5 +1,9 @@
 # Hexagonal Architecture Template (NestJS + TypeScript)
 
+![License](https://img.shields.io/badge/license-MIT-green)
+![NestJS](https://img.shields.io/badge/NestJS-12-red)
+![TypeScript](https://img.shields.io/badge/TypeScript-7-blue)
+
 Starter that keeps **domain** and **application** as framework-free TypeScript and confines **NestJS** to the edges — Ports & Adapters you can clone, test, and extend.
 
 **Highlights:** inward dependencies, two sample bounded contexts (`users`, `tasks`), e2e coverage, modern tooling (TS 7, oxlint).
@@ -9,6 +13,27 @@ Starter that keeps **domain** and **application** as framework-free TypeScript a
 - **Dependencies point inward:** `infrastructure → application → domain`.
 - **Business logic stays pure:** no `@nestjs/*` under `domain/` or `application/`.
 - **Features are slices:** each module owns its domain, use cases, and adapters.
+
+## Request flow
+
+```mermaid
+flowchart LR
+    HTTP([HTTP request]) -->|inbound adapter| Controller[Controller]
+    Controller -->|driving port| UseCase[Use case]
+    UseCase -->|driven port| Repository[(Repository)]
+    UseCase -->|driven port| Notifier[Notifier]
+
+    subgraph infrastructure
+        Controller
+        Repository
+        Notifier
+    end
+    subgraph application
+        UseCase
+    end
+```
+
+Adapters depend on ports (interfaces); the application never knows which concrete adapter runs.
 
 ## Structure
 
